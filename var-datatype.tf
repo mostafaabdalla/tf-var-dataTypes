@@ -39,4 +39,6 @@ resource "aws_elb" "bar" {
 resource "aws_instance" "myec2" {
   ami           = "ami-08e4e35cccc6189f4"
   instance_type = var.list[0]
+  #or if you want to select according to the region, you can use the map variable:
+  #  instance_type = var.types["us-east-1"]
 }
